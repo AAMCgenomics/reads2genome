@@ -4,7 +4,7 @@ process BUSCO {
 
     // required lineage parameter to lower memory requirements than the full auto selection, nothing modified but note this
 
-    conda "bioconda::busco=5.4.3"
+    conda "bioconda::busco=5.4.3 conda-forge::python=3.10"
     container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ?
         'https://depot.galaxyproject.org/singularity/busco:5.4.3--pyhdfd78af_0':
         'biocontainers/busco:5.4.3--pyhdfd78af_0' }"
