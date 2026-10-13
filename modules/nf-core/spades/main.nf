@@ -2,7 +2,7 @@ process SPADES {
     tag "$meta.id"
     label 'process_high'
 
-    conda "bioconda::spades=3.15.5"
+    conda "bioconda::spades=3.15.5 conda-forge::python=3.10"
     container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ?
         'https://depot.galaxyproject.org/singularity/spades:3.15.5--h95f258a_1' :
         'biocontainers/spades:3.15.5--h95f258a_1' }"
