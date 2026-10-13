@@ -3,7 +3,7 @@ process QUAST {
 
     // modifies input and output directory handling
 
-    conda "bioconda::quast=5.2.0"
+    conda "bioconda::quast=5.2.0 conda-forge::python=3.10"
     container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ?
         'https://depot.galaxyproject.org/singularity/quast:5.2.0--py39pl5321h2add14b_1' :
         'biocontainers/quast:5.2.0--py39pl5321h2add14b_1' }"
